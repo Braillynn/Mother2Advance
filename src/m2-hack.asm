@@ -2420,7 +2420,7 @@ disclaimer_map:
 // Code files
 //==============================================================================
 
-.include "m2-localize.asm"
+//.include "m2-localize.asm"
 
 .org 0x80FCE6C
 .include "syscalls.asm"
