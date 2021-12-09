@@ -2019,21 +2019,6 @@ nop
 .org 0x800ECB2 :: bl writeLumineHallText
 
 //==============================================================================
-// Cartridge choosing screen hacks
-//==============================================================================
-
-.org 0x8013C62 :: bl change_palette_needed_foreground
-.org 0x8013CAA :: bl change_palette_needed_background
-
-.org 0x86DD794 :: .incbin "data/m2-cartridge-tiles.bin"
-.org 0x8706994 :: .incbin "data/m2-cartridge-arrangements.bin"
-
-.org 0x8705794
-
-m12_cartridge_palettes:
-.incbin "data/m2-cartridge-palettes.bin"
-
-//==============================================================================
 // First function hacks
 //==============================================================================
 
