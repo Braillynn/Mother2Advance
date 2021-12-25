@@ -1953,26 +1953,6 @@ void printCashWindow()
     m2_sub_d3c50();
 }
 
-void eb_cartridge_palette_change(bool background)
-{
-    unsigned short *paletteDest = (unsigned short*)0x5000040;
-    if(background)
-    {
-        if(BUILD_PALETTE)
-        {
-            //Makes the game do the palette work. Copy the result in a bin file and use that instead in order to make the swap fast
-            unsigned short palettes[0x50];
-            cpuset(paletteDest, palettes, 0x50);
-            for(int i = 0; i < 5; i++)
-                m12_dim_palette(&palettes[i * 0x10], 0x10, 0x800);
-            cpuset(palettes, paletteDest, 0x50);
-        }
-        else
-            cpuset(m12_cartridge_palettes_dimmed, paletteDest, 0x50);
-    }
-    else
-        cpuset(&m12_cartridge_palettes[0x20], paletteDest, 0x50);
-}
 
 // x, y, width: tile coordinates
 void print_blankstr_buffer(int x, int y, int width, byte *dest)
