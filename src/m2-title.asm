@@ -107,7 +107,6 @@ ldr     r0,[r1,8]
 pop     {r3}
 
 // Return to old sequence 0 code
-ldr     r0,=m2_title_sequence_00
 mov     pc,r0
 
 //---------------------------------------------------------
@@ -126,7 +125,6 @@ beq     @@unset
     @@set:
 
         // Skip our code and return to the old sequence 1 code
-        ldr     r0,=m2_title_sequence_01
         mov     pc,r0
 
     @@unset:
@@ -170,7 +168,6 @@ neg     r0,r0           // This gets incremented before calling the sequence sub
                         // so start it at -1
 str     r0,[r2,4]
 
-ldr     r0,=m2_title_sequence_04
 mov     pc,r0
 
 //---------------------------------------------------------
